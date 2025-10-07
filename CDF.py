@@ -7,5 +7,26 @@ import matplotlib.pyplot as plt
 # Truncated exponential on [0,1] with shape beta > 0:
 # Inverse CDF: x = - (1/beta) * ln(1 - u*(1 - exp(-beta)))
 
+def sample_trunc_exp_icdf(n, beta, rng=np.random.default_rng()):
+    u = rng.uniform(0.0, 1.0, size=n)
+    return -(1.0 / beta) * np.log(1.0 - u * (1.0 - np.exp(-beta)))
 
+def sample_trunc_exp_rejection(n, beta, rng=np.random.default_rng()):
+    M = beta / (1.0 - np.exp(-beta))
+    out = []
+    while len(out) < n:
+        x = rng.uniform(0.0, 1.0)
+        u = rng.uniform(0.0, 1.0)
+        # Acceptance probability f(x)/(M g(x)) = e^{-beta x}
+        if u <= np.exp(-beta * x):
+            out.append(x)
+    return np.array(out)
+
+def trunc_exp_pdf(x, beta):
+    Z = (1.0 - np.exp(-beta))
+    return (beta * np.exp(-beta * x)) / Z * ((x >= 0) & (x <= 1))
+
+def trunc_exp_cdf(x, beta):
+    x = np.clip(x, 0.0, 1.0)
+    return (1.0 - np.exp(-beta * x)) / (1.0 - np.exp(-beta))
 
