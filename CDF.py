@@ -46,7 +46,7 @@ x = np.linspace(0, 1, 200)
 pdf = trunc_exp_pdf(x, beta)
 
 plt.figure(figsize=(10,5))
-plt.hist(samples_icdf, bins=50, density=True, alpha=0.2, label="Inverse CDF", color="hotpink")
+plt.hist(samples_icdf, bins=50, density=True, alpha=0.5, label="Inverse CDF", color="hotpink")
 plt.hist(samples_rej, bins=50, density=True, alpha=0.2, label="Rejection Sampling", color="mediumslateblue")
 plt.plot(x, pdf, 'k-', lw=1, label="True PDF")
 plt.xlabel("x")
