@@ -30,3 +30,7 @@ def trunc_exp_cdf(x, beta):
     x = np.clip(x, 0.0, 1.0)
     return (1.0 - np.exp(-beta * x)) / (1.0 - np.exp(-beta))
 
+
+
+
+# Monte Carlo ellipse
