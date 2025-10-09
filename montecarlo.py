@@ -64,16 +64,24 @@ for N in Ns:
     estimated_area3.append(est3)
     stat_unc3.append(std3)
 
+    est4, std4 = circumference_ramanujan(a, b)
+    estimated_area4.append(est4)
+    stat_unc4.append(std4)
+
 estimated_area1 = np.array(estimated_area1)
 estimated_area2 = np.array(estimated_area2)
 estimated_area3 = np.array(estimated_area3)
+estimated_area4 = np.array(estimated_area4)
 
 scale = stat_unc[0] * np.sqrt(Ns[0]) 
 expected = scale / np.sqrt(Ns)
 
 # Creating the plots
 plt.figure(figsize=(7,5))
-plt.plot(Ns, stat_unc1, color="hotpink",linewidth=2)
+plt.plot(Ns, stat_unc1, color="palepink",linewidth=2)
+plt.plot(Ns, stat_unc2, color="purple",linewidth=2)
+plt.plot(Ns, stat_unc3, color="plum",linewidth=2)
+plt.plot(Ns, stat_unc4, color="palevioletred",linewidth=2)
 plt.plot(Ns, expected, "k--")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
