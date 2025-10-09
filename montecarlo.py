@@ -90,3 +90,16 @@ plt.show()
 
 print("Ellipse circumference:", circumference_ramanujan(a, b))
 
+# draw random samples
+rng = np.random.default_rng()
+
+ellipse_area = np.pi * a * b
+
+# uniform over the space distribution
+def mc_uniform(N):
+    x = rng.uniform(-a, a, N)
+    f = 2 * b * np.sqrt(1 - (x/a)**2)
+    return (2*a)*f.mean(), (2*a)*f.std(ddof=1)/np.sqrt(N)
+
+
+
