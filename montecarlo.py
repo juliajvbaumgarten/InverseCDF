@@ -43,7 +43,7 @@ def circumference_ramanujan(a, b):
 a = 5.0
 b = 2.0
 
-Ns = np.arange(1000, 10001, 1000)
+Ns = np.logspace(2, 6, 10, dtype=int)
 
 estimated_area = []
 stat_unc = []
