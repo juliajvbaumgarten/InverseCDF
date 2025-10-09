@@ -46,6 +46,7 @@ b = 2.0
 Ns = np.arange(1000, 10001, 1000)
 
 estimated_area = []
+stat_unc = []
 
 for N in Ns:
     est, std = mc_area_hit_or_miss(a, b, N)
@@ -53,5 +54,4 @@ for N in Ns:
     stat_unc.append(std)
 
 estimated_area = np.array(estimated_area)
-
 
