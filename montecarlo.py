@@ -73,7 +73,7 @@ estimated_area1 = np.array(estimated_area1)
 estimated_area2 = np.array(estimated_area2)
 estimated_area3 = np.array(estimated_area3)
 
-scale = stat_unc[0] * np.sqrt(Ns[0]) 
+scale = stat_unc1[0] * np.sqrt(Ns[0]) 
 expected = scale / np.sqrt(Ns)
 
 # Creating the plots
