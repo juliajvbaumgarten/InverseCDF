@@ -45,22 +45,35 @@ b = 2.0
 
 Ns = np.logspace(2, 6, 10, dtype=int)
 
-estimated_area = []
-stat_unc = []
+estimated_area1 = []
+stat_unc1 = []
+
+estimated_area2 = []
+stat_unc2 = []
 
 for N in Ns:
-    est, std = mc_area_hit_or_miss(a, b, N)
-    estimated_area.append(est)
-    stat_unc.append(std)
+    est1, std1 = mc_area_hit_or_miss(a, b, N)
+    estimated_area1.append(est1)
+    stat_unc1.append(std1)
 
-estimated_area = np.array(estimated_area)
+    est2, std2 = mc_area_1d(a, b, N)
+    estimated_area2.append(est2)
+    stat_unc2.append(std2)
+
+    est3, std3 = mc_circumference(a, b, N)
+    estimated_area3.append(est3)
+    stat_unc3.append(std3)
+
+estimated_area1 = np.array(estimated_area1)
+estimated_area2 = np.array(estimated_area2)
+estimated_area3 = np.array(estimated_area3)
 
 scale = stat_unc[0] * np.sqrt(Ns[0]) 
 expected = scale / np.sqrt(Ns)
 
 # Creating the plots
 plt.figure(figsize=(7,5))
-plt.plot(Ns, stat_unc, color="hotpink",linewidth=2)
+plt.plot(Ns, stat_unc1, color="hotpink",linewidth=2)
 plt.plot(Ns, expected, "k--")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
