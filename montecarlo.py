@@ -85,6 +85,7 @@ plt.plot(Ns, expected, "k--")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
 plt.title("Statistical Uncertainty")
+plt.legend()
 plt.show()
 
 print("Ellipse circumference:", circumference_ramanujan(a, b))
