@@ -1,12 +1,8 @@
+# Group: Lauren Sdun, Julia Jones, Julia Baumgarten
 
-
-
-
-
-
-
-
-
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 
 def mc_area_hit_or_miss(a, b, N, rng=np.random.default_rng()):
     # Uniform in bounding box, our indicator for being inside ellipse
