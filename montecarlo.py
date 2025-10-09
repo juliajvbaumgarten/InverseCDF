@@ -55,12 +55,12 @@ for N in Ns:
 
 estimated_area = np.array(estimated_area)
 
-scale = estimated_area[0] * np.sqrt(Ns[0]) 
+scale = stat_unc[0] * np.sqrt(Ns[0]) 
 expected = scale / np.sqrt(Ns)
 
 # Creating the plots
 plt.figure(figsize=(7,5))
-plt.plot(Ns, estimated_area, color="olive")
+plt.plot(Ns, stat_unc, color="olive")
 plt.plot(Ns, expected, color="hotpink")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
