@@ -51,6 +51,9 @@ stat_unc1 = []
 estimated_area2 = []
 stat_unc2 = []
 
+estimated_area3 = []
+stat_unc3 = []
+
 for N in Ns:
     est1, std1 = mc_area_hit_or_miss(a, b, N)
     estimated_area1.append(est1)
