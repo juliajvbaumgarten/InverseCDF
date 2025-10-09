@@ -8,13 +8,13 @@ def mc_area_hit_or_miss(a, b, N, rng=np.random.default_rng()):
     # Uniform in bounding box, our indicator for being inside ellipse
     X = rng.uniform(-a, a, size=N)
     Y = rng.uniform(-b, b, size=N)
-    inside = (X / a) ** 2 + (Y / b) ** 2 <= 1.0
-    p = inside.mean()
-    box_area = (2 * a) * (2 * b)
-    est = box_area * p
+    inside = (X / a) ** 2 + (Y / b) ** 2 <= 1.0 # returns true for ellipse, false otherwise
+    p = inside.mean() # probability of hitting the ellipse
+    box_area = (2 * a) * (2 * b) # area of boundary recatngle
+    est = box_area * p # mc estimate of the ellipse area
     # Binomial variance for hit/miss:
     var_p = p * (1 - p) / N
-    std = box_area * np.sqrt(var_p)
+    std = box_area * np.sqrt(var_p) # 1sigma statistical uncertainty
     return est, std
 
 def mc_area_1d(a, b, N, rng=np.random.default_rng()):
