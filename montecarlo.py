@@ -40,7 +40,7 @@ def circumference_ramanujan(a, b):
 
 
 # Define ellipse parameters
-a = 3.0
+a = 5.0
 b = 2.0
 
 Ns = np.arange(1000, 10001, 1000)
@@ -54,4 +54,13 @@ for N in Ns:
     stat_unc.append(std)
 
 estimated_area = np.array(estimated_area)
+
+# Creating the plots
+plt.figure(figsize=(7,5))
+plt.plot(Ns, estimated_area, color="olive",)
+plt.xlabel("Number of Samples")
+plt.ylabel("Estimated Area")
+plt.title("Statistical Uncertainty")
+plt.show()
+
 
