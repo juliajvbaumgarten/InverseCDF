@@ -39,6 +39,9 @@ def circumference_ramanujan(a, b):
     return np.pi * (a + b) * (1 + 3*h / (10 + np.sqrt(4 - 3*h)))
 
 
+# Define ellipse parameters
+a = 3.0
+b = 2.0
 
 
 
