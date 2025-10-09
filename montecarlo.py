@@ -87,4 +87,5 @@ plt.ylabel("Estimated Area")
 plt.title("Statistical Uncertainty")
 plt.show()
 
+print("Ellipse circumference:", circumference_ramanujan(a, b))
 
