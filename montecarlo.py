@@ -60,8 +60,8 @@ expected = scale / np.sqrt(Ns)
 
 # Creating the plots
 plt.figure(figsize=(7,5))
-plt.plot(Ns, stat_unc, color="olive")
-plt.plot(Ns, expected, color="hotpink")
+plt.plot(Ns, stat_unc, color="hotpink",linewidth=2)
+plt.plot(Ns, expected, "k--")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
 plt.title("Statistical Uncertainty")
