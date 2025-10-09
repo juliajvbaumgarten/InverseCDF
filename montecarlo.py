@@ -55,6 +55,9 @@ for N in Ns:
 
 estimated_area = np.array(estimated_area)
 
+scale = estimated_area[0] * np.sqrt(Ns[0]) 
+expected = scale / np.sqrt(Ns)
+
 # Creating the plots
 plt.figure(figsize=(7,5))
 plt.plot(Ns, estimated_area, color="olive",)
