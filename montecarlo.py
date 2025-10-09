@@ -78,9 +78,9 @@ expected = scale / np.sqrt(Ns)
 
 # Creating the plots
 plt.figure(figsize=(7,5))
-plt.plot(Ns, stat_unc1, color="deeppink",linewidth=2,label="")
-plt.plot(Ns, stat_unc2, color="purple",linewidth=2)
-plt.plot(Ns, stat_unc3, color="plum",linewidth=2)
+plt.plot(Ns, stat_unc1, color="deeppink",linewidth=2,label="2D sampling")
+plt.plot(Ns, stat_unc2, color="purple",linewidth=2,label="1D sampling")
+plt.plot(Ns, stat_unc3, color="plum",linewidth=2,label="Circumference")
 plt.plot(Ns, expected, "k--")
 plt.xlabel("Number of Samples")
 plt.ylabel("Estimated Area")
